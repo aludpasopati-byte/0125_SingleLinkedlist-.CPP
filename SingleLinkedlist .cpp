@@ -165,4 +165,13 @@ int main()
                 break;
             }
 
-          
+            cout << "\nkMasukkan no mahasiswa yang akan dihapus : ";
+            cin >> nim;
+
+            if (mhs.delNode(nim) == false)
+            cout << "\nData tidak ditemukan" << endl;
+            else
+            cout << "\nData dengan nomor mahasiswa " << nim << "berhasil dihapus\n";
+            break;
+
+           
