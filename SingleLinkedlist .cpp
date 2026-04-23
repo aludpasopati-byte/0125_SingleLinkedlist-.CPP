@@ -174,4 +174,39 @@ int main()
             cout << "\nData dengan nomor mahasiswa " << nim << "berhasil dihapus\n";
             break;
 
-           
+            case '3':
+            mhs.traverse();
+            break;
+
+            case '4':
+            {
+                if (mhs.listEmpty())
+                {
+                    cout << "\nList kosong\n";
+                    break;
+                }
+
+                Node *previous, *current;
+                cout << "\nMasukkan no mahasiswa yang dicari: ";
+                cin >> nim;
+
+                if (mhs.searc(nim, previous, current) == false)
+                cout << "\nData tidak ditemukan\n";
+                else
+                {
+                    cout << "\nData ditemukan\n";
+                    cout << "Nim mahasiswa: " << current->noMhs << endl;
+                }
+                break;
+            }
+
+            case '5':
+            break;
+
+            default:
+            cout << "\nPilihan salah!\n";
+        }
+
+    } while (ch != '5');
+
+    return 0;
