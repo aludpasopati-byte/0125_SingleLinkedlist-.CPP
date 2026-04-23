@@ -76,4 +76,61 @@ class linkedList
         }
 
         return (current != NULL);
-   
+     }
+
+    bool listEmpty()
+    {
+        return (start == NULL);
+    }
+
+    bool searc(int nim, Node *&previous, Node *&current)
+    {
+        previous = start;
+        current = start;
+
+        while (current != NULL && nim != current->noMhs)
+        {
+            previous = current;
+            current = current->next;
+        }
+
+        return (current != NULL);
+    }
+
+    bool delNode(int nim)
+    {
+        Node *current, *previous;
+
+        if (!searc(nim, previous, current))
+        return false;
+
+        if (current == start)
+        start = start->next;
+        else
+        previous->next = current->next;
+
+        delete current;
+        return true;
+    }
+
+    void traverse()
+    {
+        if (listEmpty())
+        {
+            cout << "\nList kosong\n";
+        }
+        else
+        {
+            cout << "\nData di dalam list adalah: \n";
+            Node *currentNode = start;
+
+            while (currentNode != NULL)
+            {
+                cout << currentNode->noMhs << endl;
+                currentNode = currentNode->next;
+            }
+            cout << endl;
+        }
+    }
+};
+
