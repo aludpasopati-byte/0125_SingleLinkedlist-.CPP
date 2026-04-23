@@ -57,4 +57,23 @@ class linkedList
 
             nodebaru->next = current;
             previous->next = nodebaru;
-  
+    }
+
+    bool listEmpty()
+    {
+        return (start == NULL);
+    }
+
+    bool searc(int nim, Node *&previous, Node *&current)
+    {
+        previous = start;
+        current = start;
+
+        while (current != NULL && nim != current->noMhs)
+        {
+            previous = current;
+            current = current->next;
+        }
+
+        return (current != NULL);
+   
