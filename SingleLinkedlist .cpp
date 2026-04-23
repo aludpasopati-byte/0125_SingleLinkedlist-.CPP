@@ -152,4 +152,17 @@ int main()
         cout << "\nMasukkan pilihan (1-5): ";
         cin >> ch;
 
-      
+        switch (ch)
+        {
+            case '1':
+            mhs.addNode();
+            break;
+
+            case '2':
+            if (mhs.listEmpty())
+            {
+                cout << "\nlist kosong" << endl;
+                break;
+            }
+
+          
